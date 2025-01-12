@@ -151,7 +151,7 @@ type poolChainElt[T any] struct {
 }
 
 type poolChain[T any] struct {
-	head *poolChainElt[T] // Теперь head тоже атомарный
+	head *poolChainElt[T]
 	tail atomic.Pointer[poolChainElt[T]]
 }
 

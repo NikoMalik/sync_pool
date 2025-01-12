@@ -295,13 +295,3 @@ func runtime_procPin() int {
 func runtime_procUnpin() {
 	ProcUnpin()
 }
-
-// The below are implemented in internal/runtime/atomic and the
-// compiler also knows to intrinsify the symbol we linkname into this
-// package.
-
-// //go:linkname runtime_LoadAcquintptr internal/runtime/atomic.LoadAcquintptr
-// func LoadAcquintptr(ptr *uintptr) uintptr
-//
-// //go:linkname runtime_StoreReluintptr internal/runtime/atomic.StoreReluintptr
-// func StoreReluintptr(ptr *uintptr, val uintptr) uintptr
